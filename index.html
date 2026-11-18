@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaitya Lodaya — Project & Program Manager</title>
+<meta name="description" content="Project & Program Manager with 5+ years in project management and 7+ years in the industry across IT, SaaS, FinTech and ERP. Incoming DBA at Indiana Wesleyan University. Open to full-time CPT, internships and H-1B change of status. Atlanta, GA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#0c1b24; --panel:#132a36; --ink:#eef5f4; --muted:#93a9b3; --line:#244352;
+  --teal:#2dd4bf; --violet:#a78bfa; --coral:#ff7a59; --slate:#7f97a8;
+  --nav:rgba(12,27,36,.9); --li:#cfdde0; --hl:var(--hl); --hover-fg:#04181d;
+  --band-bg:#eef5f4; --band-fg:#0c1b24; --band-lede:#3d5663; --band-h3:#c13a1f; --band-p:#2a424e;
+  --foot-bg:#2dd4bf; --foot-fg:#06222a; --foot-p:#0b3a40; --foot-s:#0f4a50;
+  --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif;
+}
+html[data-theme="light"]{
+  --paper:#f1f6f5; --panel:#ffffff; --ink:#0c1b24; --muted:#556a74; --line:#cbdadb;
+  --teal:#0d9488; --violet:#7c5cf0; --coral:#f0603c; --slate:#6b8090;
+  --nav:rgba(241,246,245,.92); --li:#27404a; --hl:rgba(13,148,136,.2);
+  --band-bg:#0c1b24; --band-fg:#eef5f4; --band-lede:#9fb7c0; --band-h3:#ff9a80; --band-p:#cfdde0;
+  --foot-bg:#0d9488; --foot-fg:#04181d; --foot-p:#06302d; --foot-s:#05302c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(30px,4.5vw,46px);font-weight:800;margin-bottom:12px}
+.lede{color:var(--muted);max-width:60ch;margin-bottom:40px}
+section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--line)}
+
+nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.02em}
+nav .wrap{gap:16px} nav ul{margin-left:auto;display:flex;gap:22px;list-style:none;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+
+.hero{padding:clamp(40px,7vw,80px) 0 clamp(36px,5vw,56px)}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 16px 7px 12px;margin-bottom:28px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(45,212,191,.5);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+.hero h1{font-size:clamp(52px,12.5vw,160px);font-weight:800;letter-spacing:-.045em;line-height:.88}
+.hero .role{font:600 clamp(20px,2.6vw,28px)/1.25 var(--display);margin:24px 0 14px}
+.hero p.sum{max-width:62ch;color:var(--muted);font-size:17px}
+.hero p.sum strong{color:var(--ink);font-weight:500}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-block;text-decoration:none;font-weight:500;font-size:14px;padding:10px 18px;border-radius:8px;border:1.5px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--paper)} .btn:hover{background:var(--teal);border-color:var(--teal);color:var(--hover-fg)}
+
+.gantt{margin-top:56px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px clamp(14px,3vw,28px) 26px}
+.gantt h2{font-size:20px;margin:0 0 4px;letter-spacing:-.01em}
+.gantt .cap{font-size:13px;color:var(--muted);margin-bottom:18px}
+.axis,.row{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center}
+.axis{font-size:12px;color:var(--muted)}
+.ticks{position:relative;height:20px}
+.ticks span{position:absolute;transform:translateX(-50%)}
+.track{position:relative;height:30px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/18))}
+.grp{font:600 13px var(--display);letter-spacing:0;padding:16px 0 6px;color:var(--ink)}
+.row{padding:7px 0;border-top:1px dashed var(--line);text-decoration:none}
+.row .lbl{font-size:13px;font-weight:500;line-height:1.3}
+.row .lbl small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+.bar{position:absolute;top:4px;bottom:4px;border-radius:6px;transform-origin:left;transform:scaleX(0);animation:grow .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*110ms + 250ms)}
+@keyframes grow{to{transform:scaleX(1)}}
+.row:hover .bar{filter:brightness(1.12)}
+.b-qa{background:var(--slate)} .b-edu{background:var(--violet)} .b-pm{background:var(--teal)}
+.b-dba{background:repeating-linear-gradient(135deg,var(--coral) 0 7px,#ff9f85 7px 14px);border:1.5px solid var(--coral)}
+.now{position:absolute;top:0;bottom:0;width:2px;background:var(--ink);pointer-events:none}
+.now::before{content:"Today";position:absolute;top:-4px;left:50%;transform:translate(-50%,-100%);font-size:11px;font-weight:500;background:var(--ink);color:var(--paper);padding:1px 7px;border-radius:4px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.open{background:var(--band-bg);color:var(--band-fg);border-top:none}
+.open h2{color:var(--band-fg)}
+.open .grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.open .lede{color:var(--band-lede)}
+.open .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.open h3{font-size:20px;margin-bottom:8px;color:var(--band-h3)}
+.open p{color:var(--band-p);font-size:15px}
+
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:150px 1fr auto;gap:14px;align-items:baseline;padding:22px 0}
+summary::-webkit-details-marker{display:none}
+summary .when{font-size:13px;color:var(--muted)}
+summary h3{font-size:clamp(20px,2.6vw,28px);font-weight:600}
+summary h3 small{display:block;font:400 14px/1.4 var(--body);letter-spacing:0;color:var(--muted);margin-top:4px}
+summary::after{content:"+";font:600 28px/1 var(--display);color:var(--teal);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+.detail{padding:0 0 30px 164px;max-width:calc(164px + 70ch)}
+.detail ul{padding-left:18px;margin-bottom:16px}
+.detail li{margin-bottom:9px;color:var(--li)}
+.detail li b{font-weight:500;color:var(--ink);background:linear-gradient(transparent 62%,rgba(45,212,191,.22) 0)}
+.chips,.pills{display:flex;flex-wrap:wrap;gap:6px}
+.chips span,.pills span{font-size:12px;padding:3px 10px;border-radius:99px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}
+
+.ledger{display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px}
+.ledger div{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;padding:16px 0;border-top:1px solid var(--line)}
+.ledger strong{font:800 clamp(36px,5vw,52px)/1 var(--display);letter-spacing:-.03em;color:var(--teal)}
+.ledger span{color:var(--muted);font-size:15px}
+.mini{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:28px;font-size:14px;color:var(--muted)}
+.mini b{font:800 22px var(--display);color:var(--ink);margin-right:6px}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.skills h3{font-size:18px;margin-bottom:12px}
+.comp{margin-top:44px;display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px}
+.comp div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:15px}
+.seg{display:flex;gap:3px;flex:none;align-items:center}
+.seg i{width:22px;height:8px;border-radius:2px;background:var(--line)}
+.seg i.on{background:var(--teal)}
+.seg em{font-style:normal;font-size:12px;color:var(--muted);margin-left:8px;width:62px}
+
+.edu{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.edu .when{font-size:13px;color:var(--muted)}
+.edu h3{font-size:20px;font-weight:600}
+.edu p{color:var(--muted);font-size:15px}
+.edu.next h3::after{content:"Incoming";font:500 12px var(--body);letter-spacing:0;margin-left:10px;padding:3px 10px;border-radius:99px;background:var(--coral);color:#2b0f06;vertical-align:3px}
+
+.theme{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.theme:hover{border-color:var(--teal);color:var(--teal)}
+.theme .moon{display:none} html[data-theme="light"] .theme .sun{display:none} html[data-theme="light"] .theme .moon{display:block}
+.mail{--m-bg:var(--ink);--m-fg:var(--paper);position:relative;display:inline-flex;font-size:14px;font-weight:500;color:var(--m-fg)}
+.mail a{text-decoration:none;padding:10px 14px 10px 18px;background:var(--m-bg);border:1.5px solid var(--m-bg);border-radius:8px 0 0 8px}
+.mail button{display:grid;place-items:center;padding:0 12px;cursor:pointer;color:var(--m-fg);background:var(--m-bg);border:1.5px solid var(--m-bg);border-left:1px solid rgba(128,128,128,.45);border-radius:0 8px 8px 0}
+.mail a:hover,.mail button:hover{background:var(--teal);border-color:var(--teal);color:var(--hover-fg)}
+.mail .tip{position:absolute;right:0;top:-32px;font-size:12px;padding:3px 9px;border-radius:6px;background:var(--coral);color:#2b0f06;opacity:0;transform:translateY(4px);transition:.2s;pointer-events:none}
+.mail.copied .tip{opacity:1;transform:none}
+footer{background:var(--foot-bg);color:var(--foot-fg);padding:clamp(56px,8vw,96px) 0 40px}
+footer h2{font-size:clamp(40px,8vw,104px);font-weight:800;letter-spacing:-.04em;line-height:.92;max-width:12ch}
+footer p{margin:24px 0 0;max-width:60ch;color:var(--foot-p);font-size:17px}
+footer .btn{border-color:var(--foot-fg);color:var(--foot-fg)}
+footer .mail{--m-bg:var(--foot-fg);--m-fg:var(--foot-bg)}
+footer .btn:hover{background:var(--coral);border-color:var(--coral);color:#2b0f06}
+footer small{display:block;margin-top:56px;color:var(--foot-s);font-size:13px}
+
+@media(max-width:800px){
+  nav ul{gap:12px;font-size:13px} nav b{font-size:16px}
+  .axis,.row,summary,.edu{grid-template-columns:1fr;gap:6px}
+  summary{grid-template-columns:1fr auto} summary .when{grid-column:1/-1}
+  .detail{padding-left:0}
+  .ledger,.comp,.skills{grid-template-columns:1fr}
+  .ledger div{grid-template-columns:100px 1fr}
+}
+@media(max-width:560px){nav ul li:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto} .bar{animation:none;transform:none} .dot{animation:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Chaitya Lodaya</b>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme" type="button" aria-label="Switch between dark and light theme" title="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="status"><span class="dot"></span>Open to full-time CPT, internships and H-1B change of status</div>
+    <h1>Chaitya Lodaya</h1>
+    <p class="role">Project &amp; Program Manager. Incoming DBA, Information Systems.</p>
+    <p class="sum"><strong>7+ years in the industry</strong>, <strong>5+ in project management</strong>, leading end-to-end technical delivery across <strong>IT, SaaS, FinTech, Payments, Insurance and ERP</strong>. I manage hybrid onshore/offshore teams to 95% on-time, on-budget delivery and use generative AI to speed up reporting and risk tracking. Based in Atlanta, GA, open to relocation.</p>
+    <div class="links">
+      <span class="mail"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chaityauf@gmail.com&amp;su=Hello%20Chaitya" target="_blank" rel="noopener">chaityauf@gmail.com</a><button type="button" data-copy="chaityauf@gmail.com" aria-label="Copy email address" title="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button><span class="tip" role="status">Copied</span></span>
+      <a class="btn" href="tel:+13528704334">+1-352-870-4334</a>
+      <a class="btn" href="https://www.linkedin.com/in/chaityalodaya/">LinkedIn</a>
+      <a class="btn" href="https://chaityaportfolio.netlify.app/">Portfolio</a>
+    </div>
+
+    <div class="gantt" role="group" aria-label="Work and education timeline from 2012 to 2030">
+      <h2>My career as a project plan</h2>
+      <p class="cap">Work history and education, side by side. Select a bar to jump to its details. The hatched bar is what’s next.</p>
+      <div class="axis"><span></span><div class="ticks" id="ticks"></div></div>
+      <div id="rows" style="position:relative"></div>
+      <div class="legend">
+        <span><i style="background:var(--slate)"></i>Software QA</span>
+        <span><i style="background:var(--teal)"></i>Project &amp; program management</span>
+        <span><i style="background:var(--violet)"></i>Completed degrees</span>
+        <span><i style="background:var(--coral)"></i>Doctor of Business Administration (upcoming)</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="open" id="open">
+  <div class="wrap">
+    <h2>Open to CPT and internship roles</h2>
+    <p class="lede">I’m starting a Doctor of Business Administration at Indiana Wesleyan University, and I’m looking for a team to build with while I study.</p>
+    <div class="grid">
+      <div><h3>Full-time CPT or internship</h3><p>My program offers Day 1 CPT, so I can work full time through the whole degree, in a full-time CPT or internship role.</p></div>
+      <div><h3>H-1B, if you’re ready to file</h3><p>I held H-1B status before and used only 13 months of it, so about 4 years and 11 months remain. I can move to H-1B at any time through a change of status, with no lottery, if an employer is ready to file directly.</p></div>
+      <div><h3>Roles I fit</h3><p>Mainly IT, SaaS, FinTech, ERP and operational project management. My skills transfer, so I can take on any PM role.</p></div>
+      <div><h3>Where</h3><p>Across the USA: in person, remote or hybrid. Based in Atlanta, GA and open to relocation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Where I’ve delivered</h2>
+    <p class="lede">Four roles, 20+ enterprise projects, and teams of up to 35 people.</p>
+
+    <details id="fundamenta">
+      <summary><span class="when">Jan 2026 – Present</span><h3>Project Manager, Technical Client Accounts<small>Fundamenta® · Remote, USA</small></h3></summary>
+      <div class="detail">
+        <ul>
+          <li>Acted as primary liaison between client executives and cross-functional delivery teams across <b>15+ client accounts</b>, managing <b>10+ concurrent Agile projects</b> through sprint planning, dependency tracking and stakeholder alignment, <b>delivering 94% on-time</b>.</li>
+          <li>Facilitated cross-departmental workshops to standardize intake and release management, <b>cutting miscommunication-driven rework ~25%</b> with SOPs and milestone trackers in Notion across 3+ departments.</li>
+          <li><b>Reduced project delays 30%</b> across 20+ parallel deliverables by streamlining task ownership and escalating blockers ahead of release dates.</li>
+          <li>Enforced <b>change control and risk governance</b> across 10+ engagements to prevent scope creep, using AI tools to automate workflow reporting and improve delivery visibility for leadership.</li>
+          <li>Used generative AI (ChatGPT, Copilot) to automate status reports and risk summaries, <b>cutting report prep time ~40%</b>.</li>
+        </ul>
+        <div class="chips"><span>Agile</span><span>Stakeholder Workshops</span><span>Notion</span><span>SOPs</span><span>Change Control</span><span>Risk Governance</span><span>GenAI</span></div>
+      </div>
+    </details>
+
+    <details id="navision">
+      <summary><span class="when">May 2023 – Sep 2025</span><h3>Project &amp; Program Manager<small>NavisionTech Inc. · Florida, USA</small></h3></summary>
+      <div class="detail">
+        <ul>
+          <li>Led delivery of <b>ERP modernization and payments/FinTech programs</b> (EasyEFT credit card processing, Authorize.net gateway integration, Verifone POS and ERP transaction reconciliation), achieving <b>95% on-time, on-budget delivery</b>.</li>
+          <li>Ensured <b>PCI-DSS compliance</b> across payment workflows, coordinating with third-party vendors to keep an audit-ready governance posture.</li>
+          <li>Acted as <b>Product Owner for EasyEFT</b>, owning the backlog and feature roadmap across POS (Verifone) and ERP integration points and prioritizing by client business requirements.</li>
+          <li>Led <b>UI/UX discovery</b> for the e-gift card product, running client workshops to map end-user and POS checkout workflows into wireframes and functional requirements before engineering handoff.</li>
+          <li>Drove <b>API application development</b> for the e-gift card platform, EasyEFT and Authorize.net integrations, defining requirements, data flows and test scenarios across POS, ERP and payment systems.</li>
+          <li>Managed hybrid, cross-functional delivery across <b>11+ member teams</b> (Scrum of Scrums, Scrum Masters, Tech Leads), leading <b>6+ programs</b> across Agile and Waterfall, <b>improving timelines 30%</b> and <b>cutting scope changes 25%</b>.</li>
+          <li>Integrated Jira, Azure DevOps and MS Project to <b>accelerate release velocity 15%</b> and cut delays 20%, owning production readiness and deployment sign-off for every release.</li>
+          <li>Applied AI-assisted analysis of historical sprint and incident data to find recurring delivery bottlenecks, informing the process changes behind the 20% drop in release delays.</li>
+          <li>Drove <b>$40K–$50K in annual client savings</b> through resource and budget optimization, supporting quarterly planning and book-of-work management for product owners and program leadership.</li>
+          <li>Led discovery into the EasyEFT client customization workflow (auditing integration specs, tracing engineering effort, analyzing support tickets) and shifted the team from one-off custom builds to a standardized configuration model, <b>cutting manual-step errors ~10–15%</b>.</li>
+          <li>Mitigated vendor delivery risk with structured <b>SLA management and escalation</b> across third-party partners, keeping timelines and regulatory compliance on track.</li>
+        </ul>
+        <div class="chips"><span>ERP</span><span>Payments</span><span>PCI-DSS</span><span>EasyEFT</span><span>Authorize.net</span><span>Verifone POS</span><span>Product Owner</span><span>UI/UX Discovery</span><span>APIs</span><span>Scrum of Scrums</span><span>SLA Management</span><span>Jira</span><span>Azure DevOps</span><span>MS Project</span></div>
+      </div>
+    </details>
+
+    <details id="autoreview">
+      <summary><span class="when">Mar 2022 – Jan 2023</span><h3>Project Manager<small>AutoReview.AI · Florida, USA</small></h3></summary>
+      <div class="detail">
+        <ul>
+          <li>Led a <b>35-member Agile team</b> across multiple workstreams to <b>cut time-to-market 30%</b> for an AI-powered compliance platform, using structured sprint planning and dependency management.</li>
+          <li>Authored <b>FRDs and acceptance criteria</b> that removed ambiguity in engineering handoffs, <b>improving feature accuracy 25%</b> and reducing rework 25%.</li>
+          <li>Partnered with data science and engineering to translate AI/ML model behavior into business requirements, bridging technical and non-technical stakeholders.</li>
+          <li>Coordinated UAT, marketing and communications workstreams, ensuring production readiness and smooth change management ahead of each release.</li>
+          <li>Developed BRDs, process flows and <b>KPI dashboards</b> that set quality benchmarks, <b>reducing critical incidents 30%</b> and raising test coverage 15%.</li>
+        </ul>
+        <div class="chips"><span>AI/ML</span><span>Compliance SaaS</span><span>FRD</span><span>BRD</span><span>UAT</span><span>Change Management</span><span>KPI Dashboards</span></div>
+      </div>
+    </details>
+
+    <details id="accenture">
+      <summary><span class="when">Nov 2017 – Jun 2021</span><h3>Software QA Analyst<small>Accenture Solutions Pvt. Ltd. · Maharashtra, India</small></h3></summary>
+      <div class="detail">
+        <ul>
+          <li><b>Reduced defect leakage 22%</b> across 20+ enterprise banking, telecom and insurance projects by enforcing GDPR/SDLC compliance and structured QA and integration testing.</li>
+          <li>Automated <b>2,500+ regression tests</b> with TOSCA, saving 2+ hours per tester daily and <b>cutting QA cycle time 20%</b>.</li>
+          <li>Directed automation prioritization for the TOSCA regression suite, covering high-risk banking transaction paths first to focus on where defects were most costly.</li>
+          <li>Provided QA and integration testing across banking, telecom and insurance platforms, including <b>Allianz Deutschland</b>, validating cross-system data integrity during a multi-year digital transformation. Used Postman to test integration points across CRM/billing, customer decision workflows and retail ordering, catching data mapping and field mismatches before production.</li>
+          <li>Performed ETL extractions, batch monitoring (Unix/PuTTY) and XML/JSON validation, <b>improving data accuracy 18%</b> and QA efficiency 30%.</li>
+        </ul>
+        <div class="chips"><span>Banking</span><span>Telecom</span><span>Insurance</span><span>TOSCA</span><span>Postman</span><span>ETL</span><span>XML/JSON</span><span>Unix</span><span>GDPR</span><span>SQL</span></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <h2>Results, in numbers</h2>
+    <p class="lede">Measured across programs in ERP, payments, compliance SaaS and enterprise QA.</p>
+    <div class="ledger">
+      <div><strong>95%</strong><span>On-time, on-budget delivery on ERP and payments programs</span></div>
+      <div><strong>30%</strong><span>Timeline improvement across Agile and Waterfall programs</span></div>
+      <div><strong>25%</strong><span>Fewer scope changes through risk and change governance</span></div>
+      <div><strong>30%</strong><span>Fewer project delays across 20+ parallel deliverables</span></div>
+      <div><strong>$50K</strong><span>Annual client savings through resource and budget optimization</span></div>
+      <div><strong>15%</strong><span>Faster release velocity by integrating Jira, Azure DevOps and MS Project</span></div>
+      <div><strong>40%</strong><span>Less report prep time using generative AI</span></div>
+      <div><strong>22%</strong><span>Lower defect leakage across enterprise projects</span></div>
+    </div>
+    <div class="mini">
+      <span><b>5+</b>years in project management</span><span><b>7+</b>years in the industry</span><span><b>11 to 35</b>person Agile teams</span><span><b>10+</b>concurrent projects</span><span><b>2.5K</b>regression tests automated</span>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <p class="lede">The tools, methods and standards behind the delivery record.</p>
+    <div class="skills">
+      <div><h3>Tools</h3><div class="pills"><span>Jira</span><span>Azure DevOps</span><span>Confluence</span><span>MS Project</span><span>Smartsheet</span><span>Trello</span><span>Monday.com</span><span>Wrike</span><span>Asana</span><span>Notion</span><span>Google Suite</span><span>Lucidchart</span><span>Figma</span><span>Visio</span><span>SharePoint</span><span>MS Suite</span></div></div>
+      <div><h3>Methodologies</h3><div class="pills"><span>Agile (Scrum, SAFe)</span><span>Waterfall</span><span>Kanban</span><span>Work Breakdown Structure</span><span>Resource Allocation</span><span>Risk &amp; Issue Management</span><span>RAID Logs</span></div></div>
+      <div><h3>Consulting &amp; delivery</h3><div class="pills"><span>Stakeholder Workshop Facilitation</span><span>Business &amp; Requirements Analysis (BRD/FRD)</span><span>Product Roadmapping</span><span>Hybrid Onshore/Offshore Delivery</span><span>Governance &amp; Change Control</span><span>Client Onboarding &amp; Implementation</span></div></div>
+      <div><h3>Quality &amp; compliance</h3><div class="pills"><span>SDLC</span><span>STLC</span><span>PLC</span><span>GDPR</span><span>PCI-DSS</span><span>QA/QC Practices</span></div></div>
+      <div><h3>Data &amp; reporting</h3><div class="pills"><span>SQL / MySQL</span><span>JQL</span><span>Advanced Excel</span><span>Gantt Charts</span><span>Power BI</span><span>KPI Dashboards</span></div></div>
+      <div><h3>AI &amp; GenAI</h3><div class="pills"><span>ChatGPT, Copilot</span><span>AI-Assisted Reporting &amp; Risk Analysis</span><span>Prompt Engineering for Workflow Automation</span><span>GenAI / LLM Concepts</span></div></div>
+    </div>
+    <div class="comp" id="comp"></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <p class="lede">Three degrees, with a doctorate on the way.</p>
+    <div class="edu next"><span class="when">2027 – 2030</span><div><h3>Doctor of Business Administration (DBA), Information Systems</h3><p>Indiana Wesleyan University · Marion, IN, USA · Admitted, starting Jan 2027 · Eligible for full-time CPT (40 hrs/week)</p></div></div>
+    <div class="edu"><span class="when">Aug 2021 – May 2023</span><div><h3>Master of Science (MS), Electrical &amp; Computer Engineering</h3><p>University of Florida · Gainesville, FL, USA · Minor: Project Management</p></div></div>
+    <div class="edu"><span class="when">Aug 2013 – May 2017</span><div><h3>Bachelor of Engineering (BE), Electronics Engineering</h3><p>Mumbai University · Mumbai, MH, India</p></div></div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <p class="lede">Credentials that back up the day-to-day work.</p>
+    <div class="edu"><span class="when">In progress</span><div><h3>Project Management Professional (PMP)</h3><p>Project Management Institute</p></div></div>
+    <div class="edu"><span class="when">Certificate</span><div><h3>Project Management Principles &amp; Practices</h3><p>UC Irvine</p></div></div>
+    <div class="edu"><span class="when">Certification</span><div><h3>Certified Scrum Foundations Professional</h3><p>CertiProf</p></div></div>
+    <div class="edu"><span class="when">Certification</span><div><h3>Jira &amp; Confluence Fundamentals</h3><p>Atlassian</p></div></div>
+    <div class="edu"><span class="when">Certificate</span><div><h3>Introduction to Generative AI</h3><p>Google</p></div></div>
+    <div class="edu"><span class="when">Certification</span><div><h3>Six Sigma Yellow Belt</h3><p>Process improvement and quality</p></div></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let’s build something great together</h2>
+    <p>Open to Project Management, Program Management and Delivery Leadership roles across the USA, including full-time CPT and internship opportunities alongside my upcoming Doctor of Business Administration at Indiana Wesleyan University. I can also move to H-1B through a change of status if an employer is ready to file.</p>
+    <div class="links">
+      <span class="mail"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chaityauf@gmail.com&amp;su=Hello%20Chaitya" target="_blank" rel="noopener">chaityauf@gmail.com</a><button type="button" data-copy="chaityauf@gmail.com" aria-label="Copy email address" title="Copy email address"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button><span class="tip" role="status">Copied</span></span>
+      <a class="btn" href="tel:+13528704334">+1-352-870-4334</a>
+      <a class="btn" href="https://www.linkedin.com/in/chaityalodaya/">LinkedIn</a>
+      <a class="btn" href="https://chaityaportfolio.netlify.app/">Portfolio</a>
+    </div>
+    <small>© <span id="yr"></span> Chaitya Lodaya · Atlanta, GA · Open to relocation</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Timeline: years as decimals. Edit the dates below to change the chart.
+  var START=2012, END=2030, today=new Date();
+  var now=today.getFullYear()+today.getMonth()/12+today.getDate()/365;
+  var groups=[
+    {g:'Work history',items:[
+      {l:'Fundamenta',s:'Project Manager',a:2026.0,b:now,c:'b-pm',h:'#fundamenta'},
+      {l:'NavisionTech',s:'Project & Program Manager',a:2023.33,b:2025.67,c:'b-pm',h:'#navision'},
+      {l:'AutoReview.AI',s:'Project Manager',a:2022.17,b:2023.04,c:'b-pm',h:'#autoreview'},
+      {l:'Accenture',s:'Software QA Analyst',a:2017.85,b:2021.45,c:'b-qa',h:'#accenture'}
+    ]},
+    {g:'Education',items:[
+      {l:'Indiana Wesleyan Univ.',s:'Doctor of Business Administration (starts Jan 2027)',a:2027.0,b:END,c:'b-dba',h:'#education'},
+      {l:'University of Florida',s:'Master of Science',a:2021.6,b:2023.4,c:'b-edu',h:'#education'},
+      {l:'Mumbai University',s:'Bachelor of Engineering',a:2013.6,b:2017.4,c:'b-edu',h:'#education'}
+    ]}
+  ];
+  var span=END-START;
+  function pct(y){return ((y-START)/span*100).toFixed(2)+'%'}
+  var t='';
+  for(var y=START;y<=END;y+=2){t+='<span style="left:'+pct(y)+'">'+y+'</span>'}
+  document.getElementById('ticks').innerHTML=t;
+
+  var h='',i=0;
+  groups.forEach(function(G){
+    h+='<div class="grp">'+G.g+'</div>';
+    G.items.forEach(function(j){
+      h+='<a class="row" href="'+j.h+'"><span class="lbl">'+j.l+'<small>'+j.s+'</small></span>'+
+         '<span class="track"><span class="bar '+j.c+'" style="--i:'+(i++)+';left:'+pct(j.a)+';width:'+((j.b-j.a)/span*100).toFixed(2)+'%"></span></span></a>';
+    });
+  });
+  var rows=document.getElementById('rows');
+  rows.innerHTML=h;
+
+  // "Today" line: aligned to the track column (labels are 150px + 14px gap on desktop)
+  var line=document.createElement('span'); line.className='now'; rows.appendChild(line);
+  function placeNow(){
+    var narrow=window.matchMedia('(max-width:800px)').matches;
+    var f=((now-START)/span).toFixed(4);
+    line.style.left=narrow?'calc(100% * '+f+')':'calc(164px + (100% - 164px) * '+f+')';
+  }
+  placeNow(); window.addEventListener('resize',placeNow);
+
+  // Open the matching role when a bar is selected
+  function openHash(){
+    var d=location.hash&&document.querySelector(location.hash);
+    if(d&&d.tagName==='DETAILS')d.open=true;
+  }
+  window.addEventListener('hashchange',openHash); openHash();
+
+  // Copy-email icon (works even when no mail app is set up)
+  var CHECK='<path d="M20 6 9 17l-5-5"/>', COPY='<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>';
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy'), box=b.closest('.mail'), ic=b.querySelector('svg');
+      function done(){box.classList.add('copied');ic.innerHTML=CHECK;setTimeout(function(){box.classList.remove('copied');ic.innerHTML=COPY},1800)}
+      function fallback(){var t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(t)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(done,fallback)}else{fallback()}
+    });
+  });
+  // Theme toggle (dark is the default)
+  var root=document.documentElement;
+  try{var th=localStorage.getItem('theme');if(th==='light'||th==='dark')root.setAttribute('data-theme',th)}catch(e){}
+  document.querySelector('.theme').addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n)}catch(e){}
+  });
+  document.getElementById('yr').textContent=today.getFullYear();
+
+  var comp=[['Stakeholder Communication',5],['Project & Program Delivery',5],['Agile / Scrum Leadership',5],['Risk & Issue Management',5],['Cross-functional Coordination',5],['Data Reporting & KPI Dashboards',4],['Budget & Resource Planning',4]];
+  var c='';
+  comp.forEach(function(x){
+    var s='';for(var i=0;i<5;i++)s+='<i class="'+(i<x[1]?'on':'')+'"></i>';
+    c+='<div><span>'+x[0].replace(/&/g,'&amp;')+'</span><span class="seg">'+s+'<em>'+(x[1]===5?'Expert':'Advanced')+'</em></span></div>';
+  });
+  document.getElementById('comp').innerHTML=c;
+})();
+</script>
+</body>
+</html>
